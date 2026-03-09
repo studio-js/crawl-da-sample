@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹 크롤링 실습장 - Tech & Books</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.6; margin: 40px; color: #333; }
+        .section_wrap { border: 1px solid #ddd; padding: 20px; margin-bottom: 30px; border-radius: 8px; }
+        /* 제목 스타일 추가 */
+        .section_title { font-size: 1.5em; color: #2c3e50; border-left: 4px solid #0056b3; padding-left: 10px; margin-bottom: 20px; }
+        .article_item { margin-bottom: 20px; border-bottom: 1px dashed #ccc; padding-bottom: 15px; list-style: none; }
+        .article_title { font-size: 1.2em; font-weight: bold; color: #0056b3; text-decoration: none; }
+        .article_title:hover { text-decoration: underline; }
+        .summary_text { color: #555; font-size: 0.95em; margin: 8px 0; }
+        .meta_info { font-size: 0.8em; color: #888; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #bbb; padding: 12px; text-align: center; }
+        th { background-color: #f8f9fa; font-weight: bold; }
+        .price_info { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <div id="header_area">
+        <h1 id="main_title" class="page_heading">데이터 수집가를 위한 테크 매거진</h1>
+        <p class="desc_text">이 페이지는 <strong>BeautifulSoup</strong>과 <strong>Selenium</strong> 실습을 위해 제작된 가상 웹사이트입니다.</p>
+    </div>
+
+    <!-- 뉴스 섹션 영역 -->
+    <div class="section_wrap" id="news_section">
+        <!-- 수정됨: 단순 h2에서 class가 부여된 h2로 변경 -->
+        <h2 class="section_title" data-type="news">최신 IT 트렌드 기사</h2>
+        <ul class="news_list" style="padding-left: 0;">
+            <li class="article_item">
+                <a href="https://example.com/article/101" class="link_thumb">
+                    <span class="article_title">파이썬 웹 크롤링 핵심 가이드</span>
+                </a>
+                <div class="summary_text">
+                    정적 페이지부터 동적 페이지까지 데이터 수집의 모든 것.<br/>초보자도 쉽게 따라 할 수 있는 코드를 제공합니다.
+                </div>
+                <div class="meta_info">
+                    <span class="author">작성자: 김데이터</span> | <span class="date">2026-03-09</span>
+                </div>
+            </li>
+            <li class="article_item">
+                <a href="https://example.com/article/102" class="link_thumb">
+                    <span class="article_title">Pandas로 시작하는 데이터 전처리</span>
+                </a>
+                <div class="summary_text">
+                    수집한 데이터를 예쁘게 다듬어 봅시다.<br/>결측치 처리부터 DataFrame 병합까지 완벽 정리!
+                </div>
+                <div class="meta_info">
+                    <span class="author">작성자: 이분석</span> | <span class="date">2026-03-08</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 랭킹 섹션 영역 -->
+    <div class="section_wrap" id="ranking_section">
+        <!-- 수정됨: 동일한 section_title 클래스를 쓰지만 데이터 속성으로 구분 -->
+        <h2 class="section_title" data-type="book">이달의 프로그래밍 베스트셀러</h2>
+        <table id="book_table" class="data_table">
+            <thead>
+                <tr>
+                    <th class="col_rank">순위</th>
+                    <th class="col_name">도서명</th>
+                    <th class="col_author">저자</th>
+                    <th class="col_price">가격</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank_num">1</td>
+                    <td class="book_name">Do it! 점프 투 파이썬</td>
+                    <td class="author_name">박응용</td>
+                    <td class="price_info">18,000원</td>
+                </tr>
+                <tr>
+                    <td class="rank_num">2</td>
+                    <td class="book_name">혼자 공부하는 머신러닝+딥러닝</td>
+                    <td class="author_name">박해선</td>
+                    <td class="price_info">26,000원</td>
+                </tr>
+                <tr>
+                    <td class="rank_num">3</td>
+                    <td class="book_name">파이썬 라이브러리를 활용한 데이터 분석</td>
+                    <td class="author_name">웨스 맥키니</td>
+                    <td class="price_info">35,000원</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
